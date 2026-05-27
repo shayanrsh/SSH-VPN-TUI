@@ -5,7 +5,7 @@ from pathlib import Path
 from textual.app import ComposeResult
 from textual.containers import Container
 from textual.screen import ModalScreen
-from textual.widgets import Button, Static, TextLog
+from textual.widgets import Button, Static, RichLog
 
 from config import PROJECT_ROOT
 from system import run_script_stream
@@ -45,7 +45,7 @@ class UpdateLogScreen(ModalScreen[None]):
     def compose(self) -> ComposeResult:
         """Compose the update log layout."""
         yield Static("Update ssh-vpn-admin")
-        yield TextLog(id="log", highlight=False)
+        yield RichLog(id="log", highlight=False)
         with Container(classes="button-row"):
             yield Button("Close", id="close")
 
@@ -55,7 +55,7 @@ class UpdateLogScreen(ModalScreen[None]):
 
     def _run_update(self) -> None:
         """Execute update script and stream logs."""
-        log = self.query_one(TextLog)
+        log = self.query_one(RichLog)
         script = PROJECT_ROOT / "update.sh"
         if not script.exists():
             log.write("update.sh not found")
