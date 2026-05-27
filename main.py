@@ -11,7 +11,6 @@ from config import LOG_PATH, PROJECT_ROOT, VERSION
 from db import Database
 from system import check_openssh, check_root, ensure_sshd_config_dir
 from traffic import TrafficManager
-from ui.app import SSHVPNAdminApp
 
 
 def configure_logging() -> None:
@@ -82,6 +81,8 @@ def main() -> int:
     traffic = TrafficManager()
     if not traffic.available():
         print("Warning: iptables/vnstat not available; traffic tracking disabled.")
+
+    from ui.app import SSHVPNAdminApp
 
     app = SSHVPNAdminApp(db=db, traffic=traffic, version=VERSION)
     app.run()
