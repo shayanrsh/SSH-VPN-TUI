@@ -1,4 +1,4 @@
-# SSH VPN Admin TUI
+# SSH VPN Admin CLI
 Production-ready terminal admin tool for managing SSH VPN users on Ubuntu 24.04.
 
 ![MIT](https://img.shields.io/badge/License-MIT-green)
@@ -11,7 +11,7 @@ Production-ready terminal admin tool for managing SSH VPN users on Ubuntu 24.04.
 ```
 
 ## Features
-- Textual-based TUI dashboard with sortable user table and live refresh
+- Simple interactive CLI menu for user management
 - Linux user hardening (nologin shell, ForceCommand, no TTY)
 - SQLite metadata store with audit events
 - Traffic accounting with iptables and limit enforcement
@@ -56,18 +56,20 @@ Launch:
 sudo ssh-vpn-admin
 ```
 
-Shortcuts:
+Menu options:
 
-| Key   | Action         |
-| ----- | -------------- |
-| N     | New user       |
-| Enter | View/Edit user |
-| D     | Disable/Enable |
-| X     | Delete user    |
-| R     | Reset traffic  |
-| U     | Update         |
-| /     | Search/filter  |
-| Q     | Quit           |
+```text
+1) List users
+2) Create user
+3) View user
+4) Edit user
+5) Toggle user
+6) Reset traffic
+7) Rotate password
+8) Delete user
+9) Update
+0) Quit
+```
 
 ## How SSH VPN Works
 
