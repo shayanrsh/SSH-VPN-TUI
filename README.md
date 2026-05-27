@@ -28,7 +28,7 @@ Production-ready terminal admin tool for managing SSH VPN users on Ubuntu 24.04.
 ## Installation
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/USERNAME/REPO/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/shayanrsh/SSH-VPN-TUI/main/install.sh)
 ```
 
 Manual install:
@@ -36,7 +36,7 @@ Manual install:
 ```bash
 sudo apt-get update -y
 sudo apt-get install -y python3 python3-pip python3-venv git openssh-server iptables
-sudo git clone https://github.com/USERNAME/REPO.git /opt/ssh-vpn-admin
+sudo git clone https://github.com/shayanrsh/SSH-VPN-TUI.git /opt/ssh-vpn-admin
 cd /opt/ssh-vpn-admin
 sudo python3 -m venv .venv
 sudo .venv/bin/pip install -r requirements.txt

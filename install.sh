@@ -8,7 +8,7 @@ NC="\033[0m"
 
 ROOT_DIR="/opt/ssh-vpn-admin"
 LAUNCHER="/usr/local/bin/ssh-vpn-admin"
-REPO_URL="https://github.com/USERNAME/REPO.git"
+REPO_URL="https://github.com/shayanrsh/SSH-VPN-TUI.git"
 
 trap 'echo -e "${RED}Error: install failed at line ${LINENO}.${NC}"; exit 1' ERR
 
